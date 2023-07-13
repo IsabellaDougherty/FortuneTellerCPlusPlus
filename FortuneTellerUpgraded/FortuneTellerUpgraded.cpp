@@ -6,8 +6,9 @@ using namespace std;
 int main() //main() starts the program
 {
 	//-----------------------------Variable Declarations------------------------
-	int favorite;
-	int disliked;
+	int month;
+	int day;
+	int year;
 	int lucky;
 	//--------------------------Introduce The Program---------------------
 	cout << "Since the beginning of time, there has always been Miraculous, accessories that grant the wearer special powers to" << endl;
@@ -23,33 +24,35 @@ int main() //main() starts the program
 	cout << "upon you? Utilizing a complex mathmatical formula from your favorite and disliked numbers, your Miraculous will be" << endl;
 	cout << "decided." << endl;
 	//---------------Get User Input--------------------------
-	cout << "Enter your favorite number (no decimals): "; //output
-	cin >> favorite;
-	cout << "Enter a number you don't like (no decimals): ";
-	cin >> disliked;
+	cout << "Enter your birth month (in numbers i.e. 1 or 10): "; //output
+	cin >> month;
+	cout << "Enter your birth date (in numbers i.e. 5 or 25): ";
+	cin >> day;
+	cout << "Enter your birth year (in numbers i.e. 2005 or 1936): ";
+	cin >> year;
 	//Next calculate the user's lucky number
-	lucky = (favorite * disliked) % 10;
-	cout << endl << "Your secret , lucky number is: " << lucky << endl;
-	if (lucky < 0) { //	conditionial, values less than 0
+	lucky = year/(month * day);
+	cout << endl << "Your secret lucky number is: " << lucky << endl;
+	if (lucky < 506) { //	conditionial, values less than 0
 		cout << "Much like the black cat, you bring destruction where you please." << endl;
 	}
-	if (lucky >= 0 && lucky < 5) {
+	if (lucky >= 506 && lucky < 1011) {
 		cout << "Blending in with the world around you, you are often as sneaky as the fox, playing tricks on the mind" << endl;
 		cout << "to lead others into your trap." << endl;
 	}
-	if (lucky >= 5 && lucky < 9) {
-		cout << "You mimic the turtle, your hard shell always holding strong to protect those you love" << endl;
+	if (lucky >= 1011 && lucky < 1516) {
+		cout << "You mimic the turtle, your hard shell always holding strong to protect those you love." << endl;
 	}
-	if (lucky = 9) {
+	if (lucky >= 1516) {
 		cout << "Your luck is similar to that of the ladybug's, surprising and always inviting." << endl;
 	}
-			/*If you know what the theme for all of these are without this comment I'm plesantly impressed. The theme is the
-			Miraculous from the show Miraculous Ladybug. It's a children's show with a really amazing plot line. Highly reccomend.*/
+	/*If you know what the theme for all of these are without this comment I'm plesantly impressed. The theme is the
+	Miraculous from the show Miraculous Ladybug. It's a children's show with a really amazing plot line. Highly reccomend.*/
 
 	//-----------Code to help the program exit "gracefully"----------------
 	cin.ignore();
 	cout << "Press enter to quit." << endl;
 	cin.ignore();
-	cout << "Go, and protect Paris with your new discovered powers" << endl;
+	cout << "Go, and protect Paris with your new discovered powers." << endl;
 	return 0;
 }
